@@ -12,7 +12,7 @@ namespace Sudoku.Shared
     public class SudokuGrid : ICloneable
     {
 
-
+       
         /// <summary>
         /// The list of row indexes is used many times and thus stored for quicker access.
         /// </summary>
@@ -21,7 +21,7 @@ namespace Sudoku.Shared
 
         private static readonly (int row, int column)[][] _LineNeighbours =
             NeighbourIndices.Select(r => NeighbourIndices.Select(c => (r, c)).ToArray()).ToArray();
-
+            
 
         private static readonly (int row, int column)[][] _ColumnNeighbours =
             NeighbourIndices.Select(c => NeighbourIndices.Select(r => (r, c)).ToArray()).ToArray();
@@ -65,7 +65,7 @@ namespace Sudoku.Shared
                 foreach (var columnIndex in NeighbourIndices)
                 {
                     var cellVoisinage = new List<(int row, int column)>();
-
+                    
                     foreach (var voisinage in AllNeighbours)
                     {
                         if (voisinage.Contains((rowIndex, columnIndex)))
@@ -82,17 +82,17 @@ namespace Sudoku.Shared
                     }
                     CellNeighbours[rowIndex][columnIndex] = cellVoisinage.ToArray();
                 }
-
+                
             }
         }
 
-
+        
 
         public SudokuGrid()
         {
         }
 
-
+        
 
         // The List property makes it easier to manipulate cells,
         public int[,] Cells { get; set; } = NeighbourIndices.Select(r => new int[9]).ToArray().To2D();
@@ -152,46 +152,8 @@ namespace Sudoku.Shared
             return output.ToString();
         }
 
+       
 
-
-        public int[][] getSudoku(object param)
-        {
-            // Implement this method to return the Sudoku grid as a 2D array
-            int[][] grid = new int[9][];
-            for (int i = 0; i < 9; i++)
-            {
-                grid[i] = new int[9];
-                for (int j = 0; j < 9; j++)
-                {
-                    grid[i][j] = Cells[i, j];
-                }
-            }
-            return grid;
-        }
-
-        public int getCaseSudoku(int row, int col)
-        {
-            // Implement this method to return the value at the specified cell
-            return Cells[row, col];
-        }
-
-        public void setCaseSudoku(int row, int col, int value)
-        {
-            // Implement this method to set the value at the specified cell
-            Cells[row, col] = value;
-        }
-
-        public void setSudoku(int[][] grid)
-        {
-            // Implement this method to set the Sudoku grid from a 2D array
-            for (int i = 0; i < 9; i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    Cells[i, j] = grid[i][j];
-                }
-            }
-        }
 
         public int[] GetAvailableNumbers(int x, int y)
         {
@@ -211,7 +173,7 @@ namespace Sudoku.Shared
                 }
             }
 
-
+            
             List<int> res = new List<int>();
 
             for (int i = 0; i < 9; i++)
@@ -286,7 +248,7 @@ namespace Sudoku.Shared
 
                         // we empty the current row collector to start building a new row
                         rowCells.Clear();
-
+                        
                     }
 
                     // when 9 rows are collected, we create a Sudoku and start collecting rows again.
@@ -319,7 +281,7 @@ namespace Sudoku.Shared
             return CloneSudoku();
         }
 
-
+        
         public SudokuGrid CloneSudoku()
         {
             // Performs a deep copy of the 2D cells array
@@ -344,7 +306,7 @@ namespace Sudoku.Shared
                     {
                         try
                         {
-
+                            
                             Type[] assemblyTypes;
 
                             try
@@ -407,7 +369,7 @@ namespace Sudoku.Shared
                     }
                 }
             }
-
+            
             return toReturn;
         }
 

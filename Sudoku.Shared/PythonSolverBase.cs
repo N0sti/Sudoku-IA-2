@@ -147,12 +147,12 @@ namespace Sudoku.Shared
             //    DownloadUrl = @"https://www.python.org/ftp/python/3.9.9/python-3.9.9-embed-amd64.zip",
             //};
 
-            Runtime.PythonDLL = "python37.dll";
-            // set the download source
-            Python.Deployment.Installer.Source = new Installer.DownloadInstallationSource()
-            {
-                DownloadUrl = @"https://www.python.org/ftp/python/3.7.3/python-3.7.3-embed-amd64.zip",
-            };
+            //Runtime.PythonDLL = "python37.dll";
+            //// set the download source
+            //Python.Deployment.Installer.Source = new Installer.DownloadInstallationSource()
+            //{
+            //    DownloadUrl = @"https://www.python.org/ftp/python/3.7.3/python-3.7.3-embed-amd64.zip",
+            //};
 
 
             // // install in local directory. if you don't set it will install in local app data of your user account
@@ -160,11 +160,11 @@ namespace Sudoku.Shared
             //
             // see what the installer is doing
 
-            //Runtime.PythonDLL = "python310.dll";
-            //Python.Deployment.Installer.Source = new Installer.DownloadInstallationSource()
-            //{
-            //	DownloadUrl = @"https://www.python.org/ftp/python/3.10.8/python-3.10.8-embed-amd64.zip",
-            //};
+            Runtime.PythonDLL = "python310.dll";
+            Python.Deployment.Installer.Source = new Installer.DownloadInstallationSource()
+            {
+                DownloadUrl = @"https://www.python.org/ftp/python/3.10.8/python-3.10.8-embed-amd64.zip",
+            };
 
 
             //Runtime.PythonDLL = "python311.dll";

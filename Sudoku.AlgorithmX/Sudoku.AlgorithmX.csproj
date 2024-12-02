@@ -11,7 +11,7 @@
     <Compile Include="MatrixList.cs" />
     <Compile Include="MatrixNode.cs" />
     <Compile Include="MatrixNodeHead.cs" />
-    <Compile Include="Solver.cs" />
+    <Compile Include="AlgorithmXSolver.cs" />
   </ItemGroup>
 
   <ItemGroup>
