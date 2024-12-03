@@ -15,10 +15,15 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sudoku.chocosolverHeuristic\Sudoku.chocosolverHeuristic.csproj" />
+    <ProjectReference Include="..\Sudoku.DlxSolver\Sudoku.DlxSolver.csproj" />
+    <ProjectReference Include="..\Sudoku.HumanSolve\Sudoku.HumanSolve.csproj" />
     <ProjectReference Include="..\Sudoku.Shared\Sudoku.Shared.csproj" />
     <ProjectReference Include="..\Sudoku.Backtracking\Sudoku.Backtracking.csproj" />
     <ProjectReference Include="..\Sudoku.AlgorithmX\Sudoku.AlgorithmX.csproj" />
-    <ProjectReference Include="..\Sudoku.Shared\Sudoku.Shared.csproj" />
+
+    <ProjectReference Include="..\Sudoku.chocosolver\Sudoku.chocosolver.csproj" />
+    <ProjectReference Include="..\Sudoku.CSPSolver\Sudoku.CSPSolver.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json">

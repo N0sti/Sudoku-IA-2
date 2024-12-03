@@ -16,6 +16,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Puzzles", "Puzzles", "{5351
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sudoku.Backtracking", "Sudoku.Backtracking\Sudoku.Backtracking.csproj", "{1C50AE77-2CE9-4BD8-ADFE-3C3A255FFC78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.chocosolver", "Sudoku.chocosolver\Sudoku.chocosolver.csproj", "{BD9CCB39-8519-45B4-90F9-EF03BE4A2753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.AlgorithmX", "Sudoku.AlgorithmX\Sudoku.AlgorithmX.csproj", "{272E0E25-EBE6-4198-B502-4C0D3CEB9F1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.HumanSolve", "Sudoku.HumanSolve\Sudoku.HumanSolve.csproj", "{0EE0BD92-B4DB-41C4-8E98-25A5A3B3FBA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.CSPSolver", "Sudoku.CSPSolver\Sudoku.CSPSolver.csproj", "{1865570F-4B76-40D6-9E42-0DF1FAEF9638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.chocosolverHeuristic", "Sudoku.chocosolverHeuristic\Sudoku.chocosolverHeuristic.csproj", "{F005A0AB-0372-4AAF-8E6F-C4813B3CF8D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +44,26 @@ Global
 		{1C50AE77-2CE9-4BD8-ADFE-3C3A255FFC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C50AE77-2CE9-4BD8-ADFE-3C3A255FFC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C50AE77-2CE9-4BD8-ADFE-3C3A255FFC78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9CCB39-8519-45B4-90F9-EF03BE4A2753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9CCB39-8519-45B4-90F9-EF03BE4A2753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9CCB39-8519-45B4-90F9-EF03BE4A2753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9CCB39-8519-45B4-90F9-EF03BE4A2753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{272E0E25-EBE6-4198-B502-4C0D3CEB9F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{272E0E25-EBE6-4198-B502-4C0D3CEB9F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{272E0E25-EBE6-4198-B502-4C0D3CEB9F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{272E0E25-EBE6-4198-B502-4C0D3CEB9F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EE0BD92-B4DB-41C4-8E98-25A5A3B3FBA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EE0BD92-B4DB-41C4-8E98-25A5A3B3FBA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EE0BD92-B4DB-41C4-8E98-25A5A3B3FBA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EE0BD92-B4DB-41C4-8E98-25A5A3B3FBA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1865570F-4B76-40D6-9E42-0DF1FAEF9638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1865570F-4B76-40D6-9E42-0DF1FAEF9638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1865570F-4B76-40D6-9E42-0DF1FAEF9638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1865570F-4B76-40D6-9E42-0DF1FAEF9638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F005A0AB-0372-4AAF-8E6F-C4813B3CF8D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F005A0AB-0372-4AAF-8E6F-C4813B3CF8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F005A0AB-0372-4AAF-8E6F-C4813B3CF8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F005A0AB-0372-4AAF-8E6F-C4813B3CF8D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

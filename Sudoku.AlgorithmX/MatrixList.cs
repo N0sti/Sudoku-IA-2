@@ -235,14 +235,14 @@ namespace Sudoku.AlgorithmX
             }
         }
 
-        public int[][] convertMatrixSudoku()
-        {
-            foreach(MatrixNode node in O)
-            {
-                sudoku[node.rowIndex][node.column] = node.value;
-            }
-            return sudoku;
-        }
+        // public int[][] convertMatrixSudoku()
+        // {
+        //     foreach(MatrixNode node in O)
+        //     {
+        //         sudoku[node.rowIndex][node.column] = node.value;
+        //     }
+        //     return sudoku;
+        // }
         private int calcRCConstrain(int i, int j)
         {
             return 9 * i + j;
@@ -263,96 +263,96 @@ namespace Sudoku.AlgorithmX
             return 243 + ((i / 3) * 3 + j / 3) * 9 + value - 1;
         }
 
-        private void search(int k)
-        {
-            if (root.right == root)
-            {
-                //rowIndexes = new LinkedList<int>(rows);
-                stop = true;
-                //Console.WriteLine("yes : " + rows.Count);
-                return;
-            }
+        // private void search(int k)
+        // {
+        //     if (root.right == root)
+        //     {
+        //         //rowIndexes = new LinkedList<int>(rows);
+        //         stop = true;
+        //         //Console.WriteLine("yes : " + rows.Count);
+        //         return;
+        //     }
 
-            MatrixNodeHead selected = (MatrixNodeHead)root.right;
-            int c = selected.size;
-            for (MatrixNodeHead currentNode = (MatrixNodeHead)root.right; currentNode != root; currentNode = (MatrixNodeHead)currentNode.right)
-            {
-                if (c > currentNode.size)
-                {
-                    c = currentNode.size;
-                    selected = currentNode;
-                }
-            }
+        //     MatrixNodeHead selected = (MatrixNodeHead)root.right;
+        //     int c = selected.size;
+        //     for (MatrixNodeHead currentNode = (MatrixNodeHead)root.right; currentNode != root; currentNode = (MatrixNodeHead)currentNode.right)
+        //     {
+        //         if (c > currentNode.size)
+        //         {
+        //             c = currentNode.size;
+        //             selected = currentNode;
+        //         }
+        //     }
 
-            cover(selected);
+        //     cover(selected);
 
-            for (MatrixNode iNode = selected.down; iNode != selected; iNode = iNode.down)
-            {
+        //     for (MatrixNode iNode = selected.down; iNode != selected; iNode = iNode.down)
+        //     {
 
-                //rows.AddLast(iNode.rowIndex);
-                O.AddLast(iNode);
+        //         //rows.AddLast(iNode.rowIndex);
+        //         O.AddLast(iNode);
 
-                for (MatrixNode jNode = iNode.right; jNode != iNode; jNode = jNode.right)
-                {
-                    cover(jNode.item);
-                }
+        //         for (MatrixNode jNode = iNode.right; jNode != iNode; jNode = jNode.right)
+        //         {
+        //             cover(jNode.item);
+        //         }
 
-                search(k + 1);
-                if (stop)
-                    return;
-                //rows.RemoveLast();
-                O.RemoveLast();
+        //         search(k + 1);
+        //         if (stop)
+        //             return;
+        //         //rows.RemoveLast();
+        //         O.RemoveLast();
 
-                for (MatrixNode jNode = iNode.left; jNode != iNode; jNode = jNode.left)
-                {
-                    uncover(jNode.item);
-                }
-            }
-            uncover(selected);
-            return;
-        }
+        //         for (MatrixNode jNode = iNode.left; jNode != iNode; jNode = jNode.left)
+        //         {
+        //             uncover(jNode.item);
+        //         }
+        //     }
+        //     uncover(selected);
+        //     return;
+        // }
 
-        public void search()
-        {
-            stop = false;
-            search(0);
-        }
+        // public void search()
+        // {
+        //     stop = false;
+        //     search(0);
+        // }
 
-        private void cover(MatrixNodeHead node)
-        {
-            node.left.right = node.right;
-            node.right.left = node.left;
-            ///Console.WriteLine("depart : " + node.name);
-            for (MatrixNode iNode = node.down; iNode != node; iNode = iNode.down)
-            {
-                for (MatrixNode jNode = iNode.right; jNode != iNode; jNode = jNode.right)
-                {
-                    jNode.up.down = jNode.down;
-                    jNode.down.up = jNode.up;
-                    jNode.item.size--;
-                    //Console.WriteLine("ici : "+ currentNode.item.name);
-                }
-                //Console.WriteLine("Balade : " + ((MatrixNodeHead)currentNode).name);
-            }
-        }
+        // private void cover(MatrixNodeHead node)
+        // {
+        //     node.left.right = node.right;
+        //     node.right.left = node.left;
+        //     ///Console.WriteLine("depart : " + node.name);
+        //     for (MatrixNode iNode = node.down; iNode != node; iNode = iNode.down)
+        //     {
+        //         for (MatrixNode jNode = iNode.right; jNode != iNode; jNode = jNode.right)
+        //         {
+        //             jNode.up.down = jNode.down;
+        //             jNode.down.up = jNode.up;
+        //             jNode.item.size--;
+        //             //Console.WriteLine("ici : "+ currentNode.item.name);
+        //         }
+        //         //Console.WriteLine("Balade : " + ((MatrixNodeHead)currentNode).name);
+        //     }
+        // }
 
-        private void uncover(MatrixNodeHead node)
-        {
-            ///Console.WriteLine("depart : " + node.name);
-            for (MatrixNode iNode = node.down; iNode != node; iNode = iNode.down)
-            {
-                for (MatrixNode jNode = iNode.right; jNode != iNode; jNode = jNode.right)
-                {
-                    jNode.up.down = jNode;
-                    jNode.down.up = jNode;
-                    jNode.item.size++;
-                    //Console.WriteLine("ici : "+ currentNode.item.name);
-                }
-                //Console.WriteLine("Balade : " + ((MatrixNodeHead)currentNode).name);
-            }
-            node.left.right = node;
-            node.right.left = node;
-        }
+        // private void uncover(MatrixNodeHead node)
+        // {
+        //     ///Console.WriteLine("depart : " + node.name);
+        //     for (MatrixNode iNode = node.down; iNode != node; iNode = iNode.down)
+        //     {
+        //         for (MatrixNode jNode = iNode.right; jNode != iNode; jNode = jNode.right)
+        //         {
+        //             jNode.up.down = jNode;
+        //             jNode.down.up = jNode;
+        //             jNode.item.size++;
+        //             //Console.WriteLine("ici : "+ currentNode.item.name);
+        //         }
+        //         //Console.WriteLine("Balade : " + ((MatrixNodeHead)currentNode).name);
+        //     }
+        //     node.left.right = node;
+        //     node.right.left = node;
+        // }
 
     }
 
